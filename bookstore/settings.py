@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-@b725#t(z##&8+ylak69ufzvy(o)#14=%e057(@qx*lc%0)xs+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'bookstore-api-cev-da43c93428b6.herokuapp.com']
 
 
 # Application definition
@@ -77,9 +77,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "bookstore.wsgi.application"
 
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
@@ -153,11 +150,6 @@ INTERNAL_IPS = [
     '127.0.0.1',
 ]
 
-SECRET_KEY = os.environ.get("SECRET_KEY", "foo")
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-DEBUG = int(os.environ.get("DEBUG", default=0))
-
-#'DJANGO_ALLOWED_HOSTS' should be a single string of hosts with a space between each.
-# For example: 'DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]'
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'bookstore-api-cev-da43c93428b6.herokuapp.com']
-
+STATIC_ROOT = BASE_DIR / 'staticfiles'
